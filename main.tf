@@ -14,6 +14,8 @@ provider "azurerm" {
   features {}
 }
 
+# 12
+
 module "networking" {
 # source                   = "app.terraform.io/Test-Roza/networking/azurerm"
 # version                  = "0.0.1"
