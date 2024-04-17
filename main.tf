@@ -15,8 +15,9 @@ provider "azurerm" {
 }
 
 module "networking" {
-  source                   = "app.terraform.io/Test-Roza/networking/azurerm"
-  version                  = "0.0.1"
+# source                   = "app.terraform.io/Test-Roza/networking/azurerm"
+# version                  = "0.0.1"
+source = "gitlab.com/rvasileva/terraform-azurerm-networking.git?ref=v0.0.1"
   prefix                   = var.prefix
   location                 = var.location
   rg_name                  = var.rg_name
@@ -29,8 +30,9 @@ module "networking" {
 }
 
 module "compute" {
-  source                = "app.terraform.io/Test-Roza/compute/azurerm"
-  version               = "0.0.1"
+  # source                = "app.terraform.io/Test-Roza/compute/azurerm"
+  # version               = "0.0.1"
+  source = "bitbucket.org/rozasworkspace/terraform-azurerm-compute?ref=v0.0.1"
   location              = module.networking.location
   rg_name               = module.networking.websrv_rg
   instance_name         = var.instance_name
@@ -40,8 +42,9 @@ module "compute" {
 }
 
 module "load-balancer" {
-  source                = "app.terraform.io/Test-Roza/load-balancer/azurerm"
-  version               = "0.0.1"
+ # source                = "app.terraform.io/Test-Roza/load-balancer/azurerm"
+  # version               = "0.0.1"
+source = "dev.azure.com/rozavasileva/terraform-azurerm-load-balancer/_git/terraform-azurerm-load-balancer?ref=v0.0.1"
   location              = module.networking.location
   rg_name               = module.networking.websrv_rg
   lb_name               = var.lb_name
