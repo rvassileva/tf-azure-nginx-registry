@@ -47,7 +47,7 @@ source = "bitbucket.org/rozasworkspace/terraform-azurerm-compute?ref=v0.0.1"
 module "load-balancer" {
  # source                = "app.terraform.io/Test-Roza/load-balancer/azurerm"
   # version               = "0.0.1"
-source = "https://dev.azure.com/rozavasileva/terraform-azurerm-load-balancer/_git/terraform-azurerm-load-balancer?ref=v0.0.1"
+  source = "git::https://dev.azure.com/rozavasileva/terraform-azurerm-load-balancer/_git/terraform-azurerm-load-balancer?ref=v0.0.1"
   location              = module.networking.location
   rg_name               = module.networking.websrv_rg
   lb_name               = var.lb_name
