@@ -34,7 +34,7 @@ source = "git::https://gitlab.com/rvasileva/terraform-azurerm-networking.git"
 module "compute" {
   # source                = "app.terraform.io/Test-Roza/compute/azurerm"
   # version               = "0.0.1"
-  source = "https://bitbucket.org/rozasworkspace/terraform-azurerm-compute.git?ref=v0.0.1"
+  source = "bitbucket.org/rozasworkspace/terraform-azurerm-compute"
   location              = module.networking.location
   rg_name               = module.networking.websrv_rg
   instance_name         = var.instance_name
