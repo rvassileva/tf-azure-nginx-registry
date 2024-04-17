@@ -19,7 +19,8 @@ provider "azurerm" {
 module "networking" {
 # source                   = "app.terraform.io/Test-Roza/networking/azurerm"
 # version                  = "0.0.1"
-source = "git::https://gitlab.com/rvasileva/terraform-azurerm-networking.git"
+# source = "git::https://gitlab.com/rvasileva/terraform-azurerm-networking.git"
+  source = "git::ssh://gitlab.com/rvasileva/terraform-azurerm-networking.git"
   prefix                   = var.prefix
   location                 = var.location
   rg_name                  = var.rg_name
